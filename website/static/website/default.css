@@ -6,3 +6,11 @@ body {
 #content {
     margin: auto;
 }
+
+.homepage-body {
+    padding: 0% 2%;
+}
+
+#floatingInputGroup2 {
+    width: 100%;
+}
