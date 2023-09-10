@@ -1,1 +1,21 @@
-<h1>Congrats I render!</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'website/default.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="content">
+        <div class="contained-content">
+            <h1>Weather Checker</h1>
+            <form method="POST">
+                <label>Enter city here: </label><input type="text"/>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
