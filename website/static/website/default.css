@@ -6,3 +6,22 @@ body {
 #content {
     margin: auto;
 }
+
+.homepage-body {
+    padding: 0% 2%;
+}
+
+#floatingInputGroup2 {
+    width: 100%;
+}
+
+.btn-primary {
+    margin-top: 2%;
+}
+
+.button {
+    //display: block;
+    width: 100%;
+    margin: auto;
+    margin-top: 2%;
+}
