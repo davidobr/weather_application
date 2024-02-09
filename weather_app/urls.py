@@ -1,5 +1,5 @@
 """
-URL configuration for weather_application project.
+URL configuration for weather_app project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from weather_application.views import homepage
+from website.views import homepage
 
 urlpatterns = [
     path('', homepage, name="home"),
