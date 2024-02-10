@@ -1,3 +1,9 @@
 # created by virtualenv automatically
 */__pycache__/*
 db.sqlite3
+# Don't want to be including my API key
+api_key.py
+
+# these files keep getting renerated even after deletion
+.idea/
+__pycache__/
