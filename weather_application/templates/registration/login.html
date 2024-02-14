@@ -12,11 +12,11 @@
 {% block content %}
     <div id="content">
         <div class="col-12 col-lg-4 mx-auto mt-5 mx-auto align-items-center homepage-body">
-            <h1 class="col-7 mx-auto">Login</h1>
-            <form method="POST">
+            <h1 class="col-4 col-lg-2 mx-auto">Login</h1>
+            <form method="POST" id="login-form" class="col-8 col-lg-4 mx-auto sm-mx-auto mt-5 ">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <input type="submit" value="Login"/> Not registered? <a href="{% url 'signup' %}">Register here</a>
+                <button type="submit" id="login-button" class="btn btn-primary col-8 col-lg-4">Login</button>Not registered? <a href="{% url 'signup' %}">Register here</a>
             </form>
         </div>
     </div>
