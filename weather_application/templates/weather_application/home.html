@@ -13,7 +13,12 @@
     <div id="content">
         <div class="col-12 col-lg-4 mx-auto mt-5 mx-auto align-items-center homepage-body">
             <h1 class="col-7 mx-auto">Weather Checker app</h1>
-            <p class="col-7 mx-auto">Please <a href="{% url 'login' %}">login</a> in order to check the weather</p>
+            {% if not user.is_authenticated  %}
+                <p class="col-7 mx-auto">Please <a href="{% url 'login' %}">login</a> in order to check the weather</p>
+            {% else %}
+                <p class="col-7 mx-auto">Welcome {{ request.user }}. Please head to the <a href="{% url 'weather' %}">weather</a>
+                    page to see the weather for your city</p>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

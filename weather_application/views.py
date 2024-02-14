@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    return render(request, "weather_application/home.html")
+    return render(request, "weather_application/home.html", {'user': request.user})
 
 
 @login_required
