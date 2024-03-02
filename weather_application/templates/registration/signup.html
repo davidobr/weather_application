@@ -21,27 +21,27 @@
                 {% if field.name == "username" %}
                 <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
                 <div class="form-floating">
-                    <input class="form-control floatingInputGroup" id="{{ field.name }}" name="{{ field.name }}" placeholder="Please enter text" required
+                    <input class="form-control floatingInputGroup" id="{{ field.name }}" name="{{ field.name }}" placeholder="Please enter your username" required
                            type="text" value="">
                     <label for="{{ field.name }}">{{ field.label }}</label>
                 </div>
                 {% else %}
                 <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
                 <div class="form-floating">
-                    <input class="form-control floatingInputGroup" name="{{ field.name }}" placeholder="Please enter text"
+                    <input class="form-control floatingInputGroup" name="{{ field.name }}" placeholder="Please enter your password/confirm your password"
                            required type="password" value="">
                     <label for="{{ field.name }}">{{ field.label }}</label>
                 </div>
 
                 {% endif %}
             </div>
-            {% if field.errors %}
-            <div class="alert alert-danger">
-                {% for error in field.errors %}
-                <strong>{{ error }}</strong><br>
-                {% endfor %}
-            </div>
-            {% endif %}
+                {% if field.errors %}
+                <div class="alert alert-danger">
+                    {% for error in field.errors %}
+                    <strong>{{ error }}</strong><br>
+                    {% endfor %}
+                </div>
+                {% endif %}
             {% endfor %}
             <button class="btn btn-primary button" type="submit">Register</button>
             Already have an account?<a href="{% url 'login' %}">Login here</a>
