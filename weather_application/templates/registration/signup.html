@@ -13,10 +13,35 @@
     <div id="content">
         <div class="col-12 col-lg-4 mx-auto mt-5 align-items-center homepage-body">
             <h1 class="col-7 mx-auto">Signup</h1>
-            <form method="POST">
+            <form method="POST" class="forms">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="btn btn-primary button">Register</button>
+                {% for field in form %}
+                <!--{{ form.as_p }}-->
+                <div class="input-group">
+                  {% if field.name == "username" %}
+                    <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                    <div class="form-floating">
+                        <input type="text" name="{{ field.name }}" class="form-control" id="floatingInputGroup2" value="" placeholder="Please enter text" required>
+                    <label for="floatingInputGroup2">{{ field.label }}</label>
+                  </div>
+                  {% else %}
+                    <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                    <div class="form-floating">
+                        <input type="password" name="{{ field.name }}" class="form-control" id="floatingInputGroup2" value="" placeholder="Please enter text" required>
+                    <label for="floatingInputGroup2">{{ field.label }}</label>
+                  </div>
+                    {% if field.errors %}
+                <div class="alert alert-danger">
+                    {% for error in field.errors %}
+                        <strong>{{ error }}</strong><br>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                  {% endif %}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary button">Register</button> Already have an account?<a href="{% url 'login' %}">Login here</a>
+            </form>
         </div>
     </div>
 {% endblock %}

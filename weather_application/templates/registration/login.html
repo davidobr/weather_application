@@ -12,10 +12,27 @@
 {% block content %}
     <div id="content">
         <div class="col-12 col-lg-4 mx-auto mt-5 align-items-center homepage-body">
-            <h1 class="col-4 col-lg-2 mx-auto">Login</h1>
-            <form method="POST" id="login-form" class="col-8 col-lg-4 mx-auto sm-mx-auto mt-5 ">
+            <h1 class="col-7 mx-auto">Login</h1>
+            <form method="POST" class="forms">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {% for field in form %}
+                <!--{{ form.as_p }}-->
+                <div class="input-group">
+                  {% if field.name == "username" %}
+                    <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                    <div class="form-floating">
+                        <input type="text" name="{{ field.name }}" class="form-control" id="floatingInputGroup2" value="" placeholder="Please enter city" required>
+                    <label for="floatingInputGroup2">{{ field.label }}</label>
+                  </div>
+                  {% else %}
+                    <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                    <div class="form-floating">
+                        <input type="password" name="{{ field.name }}" class="form-control" id="floatingInputGroup2" value="" placeholder="Please enter city" required>
+                    <label for="floatingInputGroup2">{{ field.label }}</label>
+                  </div>
+                  {% endif %}
+                </div>
+                {% endfor %}
                 <button type="submit" id="login-button" class="btn btn-primary col-8 col-lg-4">Login</button>Not registered? <a href="{% url 'signup' %}">Register here</a>
             </form>
         </div>
