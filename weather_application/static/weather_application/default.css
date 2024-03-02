@@ -37,3 +37,7 @@ body {
 .forms .input-group {
     margin-top: 10px;
 }
+
+.floatingInputGroup {
+    width: 100%;
+}

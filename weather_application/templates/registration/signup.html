@@ -21,14 +21,14 @@
                 {% if field.name == "username" %}
                 <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
                 <div class="form-floating">
-                    <input class="form-control" id="floatingInputGroup2" name="{{ field.name }}" placeholder="Please enter text" required
+                    <input class="form-control floatingInputGroup" name="{{ field.name }}" placeholder="Please enter text" required
                            type="text" value="">
                     <label for="floatingInputGroup2">{{ field.label }}</label>
                 </div>
                 {% else %}
                 <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
                 <div class="form-floating">
-                    <input class="form-control" id="floatingInputGroup2" name="{{ field.name }}" placeholder="Please enter text"
+                    <input class="form-control floatingInputGroup" name="{{ field.name }}" placeholder="Please enter text"
                            required type="password" value="">
                     <label for="floatingInputGroup2">{{ field.label }}</label>
                 </div>
