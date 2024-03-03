@@ -19,21 +19,28 @@
             <!--{{ form.as_p }}-->
             <div class="input-group">
                 {% if field.name == "username" %}
-                <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
-                <div class="form-floating">
-                    <input class="form-control floatingInputGroup" id="{{ field.name }}" name="{{ field.name }}" placeholder="Please enter your username" required
-                           type="text" value="">
-                    <label for="{{ field.name }}">{{ field.label }}</label>
-                </div>
-                {% else %}
-                <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
-                <div class="form-floating">
-                    <input class="form-control floatingInputGroup" id="{{ field.name }}" name="{{ field.name }}" placeholder="Please enter your password"
-                           required type="password" value="">
-                    <label for="{{ field.name }}">{{ field.label }}</label>
-                </div>
+                    <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                    <div class="form-floating">
+                        <input class="form-control floatingInputGroup" id="id_{{ field.name }}" name="{{ field.name }}" placeholder="Please enter your username" required
+                               type="text" value="">
+                        <label for="id_{{ field.name }}">{{ field.label }}</label>
+                    </div>
+                    {% else %}
+                    <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+                    <div class="form-floating">
+                        <input class="form-control floatingInputGroup" id="id_{{ field.name }}" name="{{ field.name }}" placeholder="Please enter your password"
+                               required type="password" value="">
+                        <label for="id_{{ field.name }}">{{ field.label }}</label>
+                    </div>
                 {% endif %}
             </div>
+                {% if form.errors %}
+                <div class="alert alert-danger">
+                    {% for key,value in form.errors.items %}
+                        <strong>{{ value }}</strong>
+                    {% endfor %}
+                </div>
+                {% endif %}
             {% endfor %}
             <button class="btn btn-primary col-8 col-lg-4" id="login-button" type="submit">Login</button>
             Not registered? <a href="{% url 'signup' %}">Register here</a>
