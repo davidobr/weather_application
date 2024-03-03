@@ -20,7 +20,7 @@ body {
 }
 
 .button {
-    //display: block;
+    /*display: block;*/
     width: 100%;
     margin: auto;
     margin-top: 2%;
@@ -31,5 +31,13 @@ body {
 }
 
 #login-button {
+    width: 100%;
+}
+
+.forms .input-group {
+    margin-top: 10px;
+}
+
+.floatingInputGroup {
     width: 100%;
 }
