@@ -41,3 +41,8 @@ body {
 .floatingInputGroup {
     width: 100%;
 }
+
+/* Remove bullet point from the login error message which has a class of errorlist assigned to the ul */
+ul.errorlist {
+    list-style-type: none;
+}
